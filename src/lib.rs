@@ -15,6 +15,12 @@ extern crate crc;
 extern crate ref_slice;
 extern crate fnv;
 extern crate twox_hash;
+extern crate tokio_core;
+extern crate tokio_io;
+extern crate tokio_proto;
+extern crate tokio_service;
+extern crate bytes;
+extern crate futures;
 
 #[macro_use]
 extern crate error_chain;
@@ -41,7 +47,10 @@ pub mod consumer;
 pub mod producer;
 mod utils;
 mod codecs;
-mod protocol;
-mod compression;
+pub mod protocol;
+pub mod compression;
+pub mod async_client;
+pub mod proto;
+pub mod codec;
 
 pub use self::error::{Error, Result};
